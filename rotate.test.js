@@ -14,7 +14,7 @@ describe("it should shift the first character in the word supplied", () => {
   });
 
   it('the string should rotate multiple times', () => {
-    const rotated = testRotate.rotate("hello there", 4);
+    const rotated = testRotate.rotate("hello there", 2);
     expect(rotated).toEqual("hello there")
   });
 

@@ -10,10 +10,7 @@ class Rotate {
       let rotations = steps % arr.length;
       if (rotations === 0) {
         return arr
-          .slice(rotations, 1)
-          .concat(" ")
-          .concat(arr.slice(-1))
-          .join("");
+          .slice().join(" ")
       }
       return arr
         .slice(rotations)
