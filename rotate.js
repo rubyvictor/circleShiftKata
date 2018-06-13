@@ -1,15 +1,25 @@
-const rotate = (word) => {
-  const wordArr = word.split("");
-  console.log(wordArr)
-  const result = []
-  wordArr.forEach(element => {
-      result.push(wordArr.shift())
-  });
-//   for (let index = 0; index < wordArr.length; index++) {
-//      result.push(wordArr.shift());      
-//   }
-  console.log(result)
-  return result.join();
+class Rotate {
+  constructor(...word) {
+    this.word = word;
+  }
+
+  rotate(word, x) {
+    let wordArr;
+    if (word.includes(" ")) {
+      wordArr = word.split(" ");
+      return wordArr
+        .slice(x)
+        .concat(" ")
+        .concat(wordArr.slice(0, x))
+        .join("");
+    } else {
+      wordArr = word.split("");
+      return wordArr
+        .slice(x)
+        .concat(wordArr.slice(0, x))
+        .join("");
+    }
+  }
 }
 
-module.exports = rotate;
+module.exports = Rotate;
