@@ -19,7 +19,7 @@ describe("it should shift the first character in the word supplied", () => {
   });
 
   it('the first word in the string should shift to the second', () => {
-    const rotated = testRotate.rotate(["hello","there"], 1);
-    expect(rotated).toEqual(["there", "hello"])
+    const rotated = testRotate.rotate(["hello","there","victor"], -2);
+    expect(rotated).toEqual(["there", "victor", "hello"])
   });
 });
