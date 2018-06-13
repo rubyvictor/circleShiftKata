@@ -1,23 +1,35 @@
 class Rotate {
-  constructor(...word) {
-    this.word = word;
+  constructor(...data) {
+    this.data = data;
   }
 
-  rotate(word, x) {
-    let wordArr;
-    if (word.includes(" ")) {
-      wordArr = word.split(" ");
-      return wordArr
-        .slice(x)
+  rotate(data, steps) {
+    let arr;
+    if (data.includes(" ")) {
+      arr = data.split(" ");
+      let rotations = steps % arr.length;
+      if (rotations === 0) {
+        return arr
+          .slice(rotations, 1)
+          .concat(" ")
+          .concat(arr.slice(-1))
+          .join("");
+      }
+      return arr
+        .slice(rotations)
         .concat(" ")
-        .concat(wordArr.slice(0, x))
+        .concat(arr.slice(0, rotations))
         .join("");
     } else {
-      wordArr = word.split("");
-      return wordArr
-        .slice(x)
-        .concat(wordArr.slice(0, x))
+      arr = data.split("");
+      return arr
+        .slice(steps)
+        .concat(arr.slice(0, steps))
         .join("");
+    }
+
+    if (data.length < 2) {
+      return data;
     }
   }
 }
